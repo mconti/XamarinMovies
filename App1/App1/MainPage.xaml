@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="App1.MainPage">
+
+    <StackLayout>
+        <Grid HeightRequest="350" VerticalOptions="Start" HorizontalOptions="Fill">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="2*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1.3*"></ColumnDefinition>
+                <ColumnDefinition Width="3.9*"></ColumnDefinition>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+            <!-- Titolo (prima riga) -->
+            <Image Source="bobina.png" 
+                   Margin="2" 
+                   Grid.Row="0" Grid.Column="0"></Image>
+
+            <Label Margin="2" FontSize="40" 
+               HorizontalTextAlignment="Center" VerticalTextAlignment="Center"
+                   Grid.Row="0" Grid.Column="1">MOVIES</Label>
+
+            <Image Source="bobina.png"  
+                   Margin="2" Grid.Row="0" 
+                   Grid.Column="2"></Image>
+
+        </Grid>
+
+        <StackLayout Orientation="Horizontal">
+            <Button Text="Add"></Button>
+            <Button Text="Edit"></Button>
+            <Button Text="Delete"></Button>
+            <Button Text="Save"></Button>
+        </StackLayout>
+
+        <ListView x:Name="lvDati">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        
+                        <!-- Una riga della ListView è fatta così...-->
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="1.3*"></ColumnDefinition>
+                                <ColumnDefinition Width="3.9*"></ColumnDefinition>
+                                <ColumnDefinition Width="1*"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+
+                            <Image Source="{Binding Immagine}" Margin="2" BackgroundColor="Yellow" Grid.Row="0" Grid.Column="0"/>
+                            <Label Text="{Binding Titolo}" Margin="2" FontSize="18" BackgroundColor="Gray" TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Grid.Row="0" Grid.Column="1"/>
+                            <!-- Button ha un attributo "CommandParameter" molto comodo per passare all'event handler il record corrente (.)-->
+                            <Button Margin="2" Text="Site" Grid.Row="0" Grid.Column="2" Clicked="btnOpenVideo" CommandParameter="{Binding .}"/>
+                        </Grid>   
+                        
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        
+    </StackLayout>
+    
+    <!--
+    <Image Source="simpson.png" 
+               Margin="2" BackgroundColor="Yellow" 
+               Grid.Row="1" Grid.Column="0"></Image>
+
+        <Label Margin="2" FontSize="30" BackgroundColor="Gray" TextColor="White"
+               HorizontalTextAlignment="Center" VerticalTextAlignment="Center"
+               Grid.Row="1" Grid.Column="1">The Simpson</Label>
+
+        <Button Margin="2"  Text="Site"
+                Grid.Row="1" Grid.Column="2"></Button>
+
+
+        <Image Source="dartvader.png"  
+               Margin="2"  BackgroundColor="Orange" 
+               Grid.Row="2" Grid.Column="0"></Image>
+
+        <Label Margin="2"  FontSize="30" BackgroundColor="Gray" TextColor="White"
+               HorizontalTextAlignment="Center" VerticalTextAlignment="Center"
+               Grid.Row="2" Grid.Column="1">Star Wars</Label>
+
+        <Button  Margin="2" Text="Site" 
+                 Grid.Row="2" Grid.Column="2"></Button>
+
+
+        <Image Source="scudo.png"  
+               Margin="2"  BackgroundColor="Aqua" 
+               Grid.Row="3" Grid.Column="0"></Image>
+
+        <Label Margin="2"  FontSize="30" BackgroundColor="Gray" TextColor="White"
+               HorizontalTextAlignment="Center" VerticalTextAlignment="Center"
+               Grid.Row="3" Grid.Column="1">Capitan Amenica</Label>
+
+        <Button Margin="2" Text="Site"
+                Grid.Row="3" Grid.Column="2" ></Button>-->
+    
+    
+</ContentPage>
