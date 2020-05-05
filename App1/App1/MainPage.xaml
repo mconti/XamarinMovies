@@ -65,41 +65,4 @@
         
     </StackLayout>
     
-    <!--
-    <Image Source="simpson.png" 
-               Margin="2" BackgroundColor="Yellow" 
-               Grid.Row="1" Grid.Column="0"></Image>
-
-        <Label Margin="2" FontSize="30" BackgroundColor="Gray" TextColor="White"
-               HorizontalTextAlignment="Center" VerticalTextAlignment="Center"
-               Grid.Row="1" Grid.Column="1">The Simpson</Label>
-
-        <Button Margin="2"  Text="Site"
-                Grid.Row="1" Grid.Column="2"></Button>
-
-
-        <Image Source="dartvader.png"  
-               Margin="2"  BackgroundColor="Orange" 
-               Grid.Row="2" Grid.Column="0"></Image>
-
-        <Label Margin="2"  FontSize="30" BackgroundColor="Gray" TextColor="White"
-               HorizontalTextAlignment="Center" VerticalTextAlignment="Center"
-               Grid.Row="2" Grid.Column="1">Star Wars</Label>
-
-        <Button  Margin="2" Text="Site" 
-                 Grid.Row="2" Grid.Column="2"></Button>
-
-
-        <Image Source="scudo.png"  
-               Margin="2"  BackgroundColor="Aqua" 
-               Grid.Row="3" Grid.Column="0"></Image>
-
-        <Label Margin="2"  FontSize="30" BackgroundColor="Gray" TextColor="White"
-               HorizontalTextAlignment="Center" VerticalTextAlignment="Center"
-               Grid.Row="3" Grid.Column="1">Capitan Amenica</Label>
-
-        <Button Margin="2" Text="Site"
-                Grid.Row="3" Grid.Column="2" ></Button>-->
-    
-    
 </ContentPage>
