@@ -15,18 +15,15 @@ namespace App1
     [DesignTimeVisible(false)]
     public partial class MainPage : ContentPage
     {
-        List<Film> Films { get; set; }
+        Films ArchivioDeiFilm { get; set; }
 
         public MainPage()
         {
             InitializeComponent();
-            Films = new List<Film>();
-            Films.Add(new Film { Titolo = "Le invenzioni di Homer", Immagine = "simpson.png", Link = "https://www.youtube.com/watch?v=ALFAZ4CIqiE" });
-            Films.Add(new Film { Titolo = "Skywalker Becomes Darth Vader", Immagine = "dartvader.png", Link = "https://www.youtube.com/watch?v=0KYxYOo2RnA" });
-            Films.Add(new Film { Titolo = "Capitan America", Immagine = "scudo.png", Link = "https://www.youtube.com/watch?v=QP8l6J_H38g" });
-        
 
-            lvDati.ItemsSource = Films;
+            ArchivioDeiFilm = new Films();
+            ArchivioDeiFilm.Load();
+            lvDati.ItemsSource = ArchivioDeiFilm;
         }
 
         async private void btnOpenVideo(object sender, EventArgs e)
@@ -45,6 +42,16 @@ namespace App1
                     await Browser.OpenAsync(f.Link, BrowserLaunchMode.SystemPreferred);
                 }
             }
+        }
+
+        private void Button_Clicked(object sender, EventArgs e)
+        {
+            ArchivioDeiFilm.Save();
+        }
+
+        private void Button_Clicked_1(object sender, EventArgs e)
+        {
+            ArchivioDeiFilm.Add(new Film { Titolo="Maurizio", Link="Http://www.youtube.com", Immagine="" });
         }
     }
 }

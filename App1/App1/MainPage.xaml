@@ -33,10 +33,10 @@
         </Grid>
 
         <StackLayout Orientation="Horizontal">
-            <Button Text="Add"></Button>
+            <Button Text="Add" Clicked="Button_Clicked_1"></Button>
             <Button Text="Edit"></Button>
             <Button Text="Delete"></Button>
-            <Button Text="Save"></Button>
+            <Button Text="Save" Clicked="Button_Clicked"></Button>
         </StackLayout>
 
         <ListView x:Name="lvDati">
